@@ -1,0 +1,32 @@
+def centered_average(nums):
+    nums = del_min(nums)
+    nums = del_max(nums)
+    cen_average(nums)
+    
+def del_min(nums):
+    least = nums[0]
+    for i in range(0, len(nums)):
+        if least > nums[i]:
+            least = nums[i]
+    nums.remove(least)
+    return nums
+    
+def del_max(nums):
+    large = nums[0]
+    for i in range(0, len(nums)):
+        if large < nums[i]:
+            large = nums[i]           
+    nums.remove(large)
+    return nums    
+        
+def cen_average(nums):
+    sum = 0
+    for i in nums:
+        sum += i  
+    v1 =  int(sum/len(nums))
+    return v1
+
+
+centered_average([1, 2, 3, 4, 100])
+centered_average([1, 1, 5, 5, 10, 8, 7])
+centered_average([-10, -4, -2, -4, -2, 0])
